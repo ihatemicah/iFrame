@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <head> -->
+    <meta charset="utf-8">
+    <title>Help Center</title>
+    <meta name="viewport" content="width=device-width , initial-scale = 1.0, maximum-scale=1.0, minimum-scale=1,  user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="description" content="The Ring Video Doorbell lets you answer the door from anywhere with your smartphone. Connects to your Wi-Fi network and works with iOs and Android devices.">
+    <!---
+    CSS from main webpage for fonts
+    ------->
+    <link href="main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!---
+    Shameless CSS
+    Below 🎉
+    ---->
+
+</head>
+    <body>
+
+      <!-- Header -->
+
+      <div class="main-container">
+      <h1>  Your Ring Video Doorbell<br> Pro is Offline </h1>
+        <h2>  What does that mean ? </h2>
+          <p> This means your Ring Video Doorbell has lost it's connection to your Wi-Fi network. </p>
+          <p> To get your Ring Doorbell back online, simply close this window and select Reconnect to Wi-Fi on the Device Health screen.
+            If you'd like to know more about why this happened, or if this is a recurring issue, read on... </p>
+
+        <h2> How did this happen </h2>
+          <p>The first thing to check is your Ring Doorbell’s battery level. If the battery in your Ring Doorbell dies, it will go offline.
+            In this case, simply connect your Ring Doorbell to a power source with the provided orange cable or any other micro USB cable and it will come online once the battery is charged.</p>
+
+        <h2> My battery is fine. What else could have cause this? </h2>
+          <p>The next thing to look at is your Ring Doorbell’s <em>Signal Strength</em>.</p>
+          <p><em>Signal Strength</em> is reported in RSSI (Received Signal Strength Indicator). The lower the number the worse the signal strength. Note the number is negative.</p>
+          <p>Anything lower than RSSI -60 is going to present problems for your Ring Video Doorbell, including the potential to go offline frequently.</p>
+          <p>If signal strength is poor, you’ll need to extend the Wi-Fi signal to your Ring Doorbell. The easiest way to do this is with our product Chime Pro.</p>
+          <p>To learn more about Chime Pro, <a href="#">click here </a>.</p>  <!-- add link here -->
+
+          <h2>What else could it be?</h2>
+          <p>Your Ring Doorbell can also go offline due to changes to your Wi-Fi network. For example getting a new router or changing your Wi-Fi password will cause your Ring Doorbell to go offline. </p>
+          <p>To get your Ring Doorbell back online, simply close this window and select Reconnect to Wi-Fi on the Device Health screen.</p>
+
+
+
+      <!-- Context -->
+      <img class="example" src="http://placehold.it/300x300"></img>
+      <p class="context"> If you received a prompt like the one below,  letting you know that your Ring Video Doorbell  Pro is offline, you'll need to reconnect it to your Wi-Fi network. </p>
+
+      <div class="question">
+        <p class="question-text"> Did this article help you out? </p>
+          <button class="yes"> Yes </button>
+          <button class="no"> No </button>
+      </div>
+          <div class="formsubmit">  <!-- hidden on load -->
+              <p style="font-family:'Equip-Medium'; color:#009AD8;"> Yikes :(</p> <p style="font-family:'Equip-Medium';"> What can we do to improve?</p>
+              <form action="redirect.php" method="post" >
+            <textarea name="User Comment" rows="5" cols="40"></textarea>
+            <input type="submit" value="Submit">
+          </form>
+          </div class="formsubmit">
+        </div>
+
+      <div class="confirmation">
+        <p> Thanks for the assistance </p> <!-- sad inline style -->
+      </div>
+
+      <div class="thankyou">
+        <p> Thank you for the love 💓 </p>
+        </div>
+    <!-- BUTTON SCRIPT ADD -->
+
+
+    <script>
+    $(document).ready(function(){
+
+      $('.formsubmit').hide(); //Makes the form hide on page load
+      $('.confirmation').hide(); // ^^
+      $('.thankyou').hide();
+
+        $('.no').click(function(){ // Form appears on click of "no"
+          $('.formsubmit').fadeIn('linear');
+          $('.yes, .no, .question-text ').hide();
+      });
+
+      $('textarea').click(function(){ // Text area empties on click
+        $(this).val(' ');
+      })
+
+      $('.yes').click(function(){ // hides "no" prompt & thanks user
+        $('.question').fadeOut('linear');
+        $('.thankyou').fadeIn('linear');
+      })
+
+      $('input').click(function(){ // on submit hide window
+        $('.formsubmit').fadeOut('linear');
+        $('.confirmation').fadeIn('linear');
+      })
+
+
+
+    });
+
+    </script>
+    <!-- <script src="form-submission-handler.js"></script> -->
+    </body>
+</html>
