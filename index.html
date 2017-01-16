@@ -58,8 +58,7 @@
       </div>
           <div class="formsubmit">  <!-- hidden on load -->
               <p style="font-family:'Equip-Medium'; color:#009AD8;"> Yikes :(</p> <p style="font-family:'Equip-Medium';"> What can we do to improve?</p>
-              <form action="redirect.php" method="post" >
-            <textarea name="User Comment" rows="5" cols="40"></textarea>
+<form action="https://script.google.com/macros/s/AKfycbzpHjRTbZ3T4Ek_dxKpN6N2P2hd5eCatlcPZvEUQE7jpyWJfAXz/exec" method="post" id="gform">            <textarea name="userComment" rows="5" cols="40" id="userComment"></textarea>
             <input type="submit" value="Submit">
           </form>
           </div class="formsubmit">
@@ -102,10 +101,27 @@
       })
 
 
+      $("#gform").submit(function(event) {
+
+       /* stop form from submitting normally */
+       event.preventDefault();
+
+       /* get the action attribute from the <form action=""> element */
+       var $form = $( this ),
+           url = $form.attr( 'action' );
+
+       /* Send the data using post with element id name and name2*/
+       var posting = $.post( url, { userComment: $('#userComment').val(), message: $('#lastname').val() } );
+
+       /* Alerts the results */
+       posting.done(function( data ) {
+         console.log('success');
+       });
+      });
+
 
     });
 
-    </script>
-    <!-- <script src="form-submission-handler.js"></script> -->
+  </script>
     </body>
 </html>
