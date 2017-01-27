@@ -58,7 +58,8 @@
       </div>
           <div class="formsubmit">  <!-- hidden on load -->
               <p style="font-family:'Equip-Medium'; color:#009AD8;"> Yikes :(</p> <p style="font-family:'Equip-Medium';"> What can we do to improve?</p>
-<form action="https://script.google.com/macros/s/AKfycbzpHjRTbZ3T4Ek_dxKpN6N2P2hd5eCatlcPZvEUQE7jpyWJfAXz/exec" method="post" id="gform">            <textarea name="userComment" rows="5" cols="40" id="userComment"></textarea>
+              <form action="https://script.google.com/macros/s/AKfycbzpHjRTbZ3T4Ek_dxKpN6N2P2hd5eCatlcPZvEUQE7jpyWJfAXz/exec" method="post" id="gform">
+                   <textarea name="userComment" rows="5" cols="40" id="userComment"></textarea>
             <input type="submit" value="Submit">
           </form>
           </div class="formsubmit">
@@ -84,6 +85,8 @@
         $('.no').click(function(){ // Form appears on click of "no"
           $('.formsubmit').fadeIn('linear');
           $('.yes, .no, .question-text ').hide();
+          $("#userComment").focus(); // focuses text field after appear 
+
       });
 
       $('textarea').click(function(){ // Text area empties on click
